@@ -1,0 +1,35 @@
+    1  cd 234093154-AYAOAN
+    2  mkdir linux_practice
+    3  cd linux_practice
+    4  touch notes.txt
+    5  ls >> notes.txt
+    6  cat notes.txt
+    7  echo "Hello, Linux!">>notes.txt
+    8  echo "This is a practical exam.">>notes.txt
+    9  head notes.txt
+   10  tail notes.txt
+   11  mkdir subdir
+   12  mv notes.txt subdir
+   13  ls
+   14  mv subdir practice_subdir
+   15  cd practice_subdir
+   16  cp notes.txt ../notes.txt
+   17  date
+   18  time
+   19  uptime
+   20  du -sh $HOME
+   21  ssh -V
+   22  php -v
+   23  mariadb --version
+   24  apache2 -v
+   25  apache -V
+   26  apache2 -V
+   27  apache -v
+   28  apachectl -v
+   29  java -version
+   30  python -version
+   31  python -v
+   32  python --version
+   33  history
+   34  cd ..
+   35  history > exam_log.txt 
