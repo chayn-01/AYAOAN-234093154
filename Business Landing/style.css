@@ -1,31 +1,56 @@
 *{
-    margin: 0;
-    padding: 0;
-
+    margin: 0px;
+    padding: 0px;
+    font-family: Century;
 }
 
-.main{
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(1.jpg);
-    background-position: center;
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(1.png);
+    height: 100vh;
     background-size: cover;
-    height: 109vh;
+    background-position: center;
+    min-height: 100px;
 }
 
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 30px;
+    min-height: 400px;
+    margin-right: 60px;
+    font-size: 16px;
 }
 
-.icon{
-    width: 200px;
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.5 ease;
+}
+
+ul li a:hover{
+    background-color: green;
+    color: #000;
+}
+
+ul li.active a{
+    background-color: aquamarine;
+    color: bisque;
+}
+
+.logo img{
     float: left;
-    height: 70px;
+    width: 150px;
+    height: auto;
 }
 
 .logo{
-    color: mediumslateblue;
+    color: rgb(153, 66, 163);
     font-size: 35px;
     font-family: Arial;
     padding-left: 20px;
@@ -33,50 +58,73 @@
     padding-top: 10px;
 }
 
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px; 
+.main{
+    max-width: 1200px;
+    margin: auto;
 }
 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title{
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-ul li{
-    list-style-type: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
+.title h1{
+    color: #fff;
+    font-size: 80px;
 }
 
-ul li a{
+.button{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn{
+    border: 1px solid #fff;
+    padding: 5px 20px;
+    color: #fff;
+    transition: 0.5 ease;
+    font-size: 18px;
     text-decoration: none;
-    color: black;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
 }
 
-ul li a:hover{
-    color:springgreen;
-
+.btn:hover{
+    background-color: green;
+    color: #000;
 }
 
-.search{
-    width: 330px;
-    float: left;
-    margin-left: 270px;
+.sub-menu{
+    display: none;
+    top: 6%;
+    position: relative;
 }
 
-.srch{
-    font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
+.sub-menu ul{
+    position: absolute;
+}
+
+.main ul li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background-color: rgb(0, 45, 117);
+    margin-top: 12px;
+    margin-left: -8px;
+}
+
+.main ul li:hover .sub-menu ul{
+    display: block;
+    margin: 6px;
+}
+
+.main ul li:hover .sub-menu ul li{
+    width: 75px;
+    padding: 5px;
+    border-bottom: 1px #fff;
     background: transparent;
-    border: 1px solid #8c46ad;
-    
+    transition: 0.4 ease;
+    text-align: left;
+    border-radius: 0px;
 }
