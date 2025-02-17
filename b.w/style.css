@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(1.png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.logo h2 {
+    color: rgb(153, 66, 163);
+    font-size: 35px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    transition: background-color 0.5s ease;
+}
+
+nav ul li a:hover {
+    background-color: green;
+    color: #000;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.title h1 {
+    font-size: 80px;
+}
+
+.button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.btn {
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    color: #fff;
+    transition: background-color 0.5s ease;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.btn:hover {
+    background-color: green;
+    color: #000;
+}
+
+.tagline {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.tagline h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.tagline p {
+    font-size: 18px;
+    color: #555;
+}
+
+.menu {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.coffee-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.coffee-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.coffee-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.coffee-item h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.coffee-item p {
+    color: #777;
+}
+
+.coffee-item span {
+    font-weight: bold;
+    color: #333;
+}
+
+.coffee-item:hover {
+    transform: scale(1.05);
+}
+
+.reviews {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.reviews h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.review-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+.review-item p {
+    font-style: italic;
+    color: #555;
+}
+
+.review-item h4 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.service-reviews {
+    padding: 20px;
+    text-align: center;
+}
+
+.service-reviews h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.service-reviews ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.service-reviews li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.call-to-action {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.call-to-action h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.call-to-action p {
+    font-size: 18px;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title h1 {
+        font-size: 50px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .coffee-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coffee-item {
+        width: 90%;
+    }
+
+    .review-item {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 36px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .coffee-item {
+        width: 100%;
+    }
+
+    .review-item {
+        width: 100%;
+    }
+}
