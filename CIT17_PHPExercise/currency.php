@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Exercise</title>
+    <title>Currency Converter</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
         body {
@@ -85,23 +85,28 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h3>LAB 02 - PHP Exercises</h3>
-        <ul>
-            <li><a href="intro.php">Introduce Yourself</a></li>
-            <li><a href="math.php">Simple Math</a></li>
-            <li><a href="rectangle.php">Area and Perimeter of a Rectangle</a></li>
-            <li><a href="temp.php">Temperature Converter</a></li>
-            <li><a href="var.php">Swapping Variables</a></li>
-            <li><a href="salary.php">Salary Calculator</a></li>
-            <li><a href="bmi.php">BMI Calculator</a></li>
-            <li><a href="string.php">String Manipulator</a></li>
-            <li><a href="bank.php">Bank Account Simulation</a></li>
-            <li><a href="gsystem.php">Simple Grading System</a></li>
-            <li><a href="currency.php">Currency Converter</a></li>
-            <li><a href="tcost.php">Travel Cost Estimator</a></li>
-        </ul>
-    </div>
+<div class="container">
+        <h1> Currency Converter</h1>
+        <div class="result">
+            <?php
+                $php = 1000; 
 
+                $usd_rate = 0.018;
+                $eur_rate = 0.016;
+                $jpy_rate = 2.68;
+
+                $usd = $php * $usd_rate;
+                $eur = $php * $eur_rate;
+                $jpy = $php * $jpy_rate;
+
+                echo "Amount in PHP: ₱" . number_format($php, 2) . "<br><br>";
+                echo "Converted to:<br>";
+                echo "USD: $" . number_format($usd, 2) . "<br>";
+                echo "EUR: €" . number_format($eur, 2) . "<br>";
+                echo "JPY: ¥" . number_format($jpy, 2) . "<br>";
+            ?>
+        </div>
+        <a href="index.php"> Back to Home</a>
+    </div>
 </body>
 </html>
