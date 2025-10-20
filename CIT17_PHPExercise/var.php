@@ -92,13 +92,13 @@
                 $x = 8;
                 $y = 4;
 
-                echo "Before swapping:<br>x = $x,<br> y = $y<br>";
+                echo "Before swapping:<br>x = $x <br> y = $y<br>";
 
                 $temp = $x;
                 $x = $y;
                 $y = $temp;
 
-                echo "After swapping:<br>x = $x,<br> y = $y<br>";
+                echo "After swapping:<br>x = $x <br> y = $y<br>";
             ?>
         </div>
         <a href="index.php"> Back to Home</a>

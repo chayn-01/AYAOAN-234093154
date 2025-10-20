@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Simple Math</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0C0420, #5D3C64, #9F6496);
@@ -31,35 +32,57 @@
             box-shadow: 0 12px 40px rgba(90, 60, 100, 0.5);
         }
 
-        h1, h3 {
+        h1 {
             color: #BA6E8F;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             letter-spacing: 1px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        form {
+            margin-bottom: 25px;
+            text-align: left;
         }
 
-        li {
-            margin: 10px 0;
+        label {
+            display: block;
+            font-weight: 600;
+            margin: 15px 0 6px 0;
+            color: #78466A;
         }
 
-        a {
-            display: inline-block;
-            text-decoration: none;
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 15px;
+            border: 2px solid #9F6496;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus {
+            border-color: #BA6E8F;
+        }
+
+        input[type="submit"] {
             background: linear-gradient(135deg, #BA6E8F, #9F6496);
-            color: #fff;
-            padding: 12px 25px;
+            color: white;
+            border: none;
             border-radius: 25px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            padding: 12px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
             box-shadow: 0 3px 10px rgba(90, 60, 100, 0.3);
             transition: all 0.3s ease;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        a:hover {
+        input[type="submit"]:hover {
             background: linear-gradient(135deg, #D39180, #BA6E8F);
             transform: scale(1.05);
             box-shadow: 0 5px 20px rgba(155, 80, 130, 0.5);
@@ -67,16 +90,28 @@
 
         .result {
             background: #F8EEF2;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
-            margin-top: 15px;
+            margin-top: 25px;
             text-align: left;
             color: #4A2E50;
             box-shadow: inset 0 0 10px rgba(155, 100, 130, 0.1);
+            font-size: 18px;
+            white-space: pre-line; /* keep line breaks */
         }
 
         .back {
+            display: inline-block;
+            margin-top: 30px;
             background: linear-gradient(135deg, #9F6496, #78466A);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 10px rgba(90, 60, 100, 0.3);
+            transition: all 0.3s ease;
         }
 
         .back:hover {
@@ -86,21 +121,46 @@
 </head>
 <body>
     <div class="container">
-        <h1> Simple Math </h1>
-        <div class="result">
-        <?php
-            $a = 20;
-            $b = 17;
+        <h1>Simple Math</h1>
 
-            echo "a = $a<br>";
-            echo "b = $b<br><br>";
-            echo "Sum: " . ($a + $b) . "<br>";
-            echo "Difference: " . ($a - $b) . "<br>";
-            echo "Product: " . ($a * $b) . "<br>";
-            echo "Quotient: " . ($a / $b) . "<br>";
+        <form action="" method="POST">
+            <label for="a">Enter value:</label>
+            <input type="number" id="a" name="a" required>
+
+            <label for="b">Enter value:</label>
+            <input type="number" id="b" name="b" required>
+
+            <input type="submit" value="Calculate">
+        </form>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // sanitize inputs
+            $a = filter_input(INPUT_POST, 'a', FILTER_VALIDATE_FLOAT);
+            $b = filter_input(INPUT_POST, 'b', FILTER_VALIDATE_FLOAT);
+
+            if ($a === false || $b === false) {
+                echo "<div class='result'>Please enter valid numbers for both fields.</div>";
+            } else {
+                // Calculate results
+                $sum = $a + $b;
+                $diff = $a - $b;
+                $prod = $a * $b;
+                $quot = ($b != 0) ? $a / $b : "Division by zero is not allowed";
+
+                echo "<div class='result'>";
+                echo "a = $a\n";
+                echo "b = $b\n\n";
+                echo "Sum: $sum\n";
+                echo "Difference: $diff\n";
+                echo "Product: $prod\n";
+                echo "Quotient: $quot\n";
+                echo "</div>";
+            }
+        }
         ?>
+
+        <a href="index.php" class="back">Back to Home</a>
     </div>
-<a href="index.php"> Back to Home</a>
-</div>
 </body>
 </html>

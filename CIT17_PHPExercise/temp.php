@@ -77,6 +77,7 @@
 
         .back {
             background: linear-gradient(135deg, #9F6496, #78466A);
+            margin-top: 15px;
         }
 
         .back:hover {
